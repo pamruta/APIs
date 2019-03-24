@@ -70,6 +70,14 @@ from flask import request
 
 app = flask.Flask(__name__)
 
+# default page
+@app.route("/", methods=['GET'])
+def home():
+
+	output = "Available Methods:\n"
+	output += "/ocr:	runs OCR service to extract text from the given image."
+	return output
+
 # runs OCR service with given parameters
 @app.route("/ocr", methods=['GET'])
 def ocr():
