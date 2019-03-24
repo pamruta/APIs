@@ -75,7 +75,7 @@ app = flask.Flask(__name__)
 def home():
 
 	output = "Available Methods:\n"
-	output += "/ocr:	runs OCR service to extract text from the given image."
+	output += "\t\t/ocr:    runs OCR service to extract text from the given image."
 	return output
 
 # runs OCR service with given parameters
