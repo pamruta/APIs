@@ -6,6 +6,19 @@ from flask import request
 
 app = flask.Flask(__name__)
 
+# home page
+@app.route("/", methods=['GET'])
+def home():
+	output = ""
+	output += "Methods available:\n"
+	output += "\t\t\/add_faces: adds faces from a given S3 bucket into a collection.\n"
+	output += "\t\t\/detect_faces: detects faces from a given image against faces indexed in a given collection.\n"
+	output += "\t\tdetect_celebrities: detects famous celebrities in a given image.\n"
+	output += "\t\tlist_collections: lists collections of previously indexed faces.\n"
+	output += "\t\tdelete_collection: deletes a specific collection.\n"
+
+	return output
+
 # training face recognition
 # adds faces from a given S3 bucket into a collection
 @app.route("/add_faces", methods=['POST'])
