@@ -1,0 +1,39 @@
+
+
+REST API written in Python Flask for Extracting Text from Images..
+
+Usage: python run-ocr.py [PORT]
+
+Runs API service at specified port number.
+
+For example, "python run-ocr.py 5055" will start the service at localhost:5055
+
+If the port number is not specified via command line, default is 5000.
+
+API Method:
+
+	/ocr: extracts text from the given image
+
+API Parameters:
+
+	image:		Input image from which text is to be extracted.
+			Acceptable image formats are: [jpeg, jpg, png]
+
+	choice:		Choice of OCR service.
+			Available choices are: [aws, google-vision, tesseract]
+
+			To use 'aws' ocr service, please install the AWS SDK 'boto3' using:
+
+				'pip install boto3'
+
+			To use 'google-vision' ocr service, install Google Vision SDK using:
+
+				'pip install google-cloud-vision'
+
+			To use 'tesseract' ocr service, install the following libraries:
+
+				'apt-get install tesseract-ocr' or 'brew install tesseract'
+
+				'pip install pytesseract'
+
+				'pip install pillow'
