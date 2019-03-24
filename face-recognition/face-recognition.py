@@ -11,11 +11,11 @@ app = flask.Flask(__name__)
 def home():
 	output = ""
 	output += "Available Methods:\n"
-	output += "\t\t/add_faces: adds faces from a given S3 bucket into a collection.\n"
-	output += "\t\t/detect_faces: detects faces from a given image against faces indexed in a given collection.\n"
-	output += "\t\t/detect_celebrities: detects famous celebrities in a given image.\n"
-	output += "\t\t/list_collections: lists collections of previously indexed faces.\n"
-	output += "\t\t/delete_collection: deletes a specific collection.\n"
+	output += "\t/add_faces: adds faces from a given S3 bucket into a collection.\n"
+	output += "\t/detect_faces: detects faces from a given image against faces indexed in a given collection.\n"
+	output += "\t/detect_celebrities: detects famous celebrities in a given image.\n"
+	output += "\t/list_collections: lists collections of previously indexed faces.\n"
+	output += "\t/delete_collection: deletes a specific collection.\n"
 
 	return output
 
