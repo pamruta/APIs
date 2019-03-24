@@ -1,4 +1,57 @@
 
 			REST API for face-recognition written in Pyhon Flask
 
+Usage: "python face-recognition.py [PORT]"
 
+Runs flask app on localhost at specified port number. 
+If the port number is not specified on command line, default port is 5000.
+
+Available methods:
+
+	[1] add_faces: Adds faces detected in the images from a given S3 bucket into a specified collection.
+
+	    	The API takes following parameters:
+
+			bucket: name of the S3 bucket containing images for indexing faces.
+			Faces detected in these images are added into a specified collection.
+			Each image should contain only face and file should be named as: "person-name.extn"
+			Allowed extensions are [jpeg, jpg, png]
+			Please follow a consistent and standard naming convention, e.g. "first_name-last_name" for all files.
+
+			For example, files containing photos of actor Sanjay Dutt should be named as:
+			"sanjay-dutt-1.jpg", "sanjay-dutt-2.jpg" etc, so that faces detected in these photos are properly
+			tagged as "Sanjay Dutt".
+
+			collection: name of the collection where faces are to be added.
+			If the 'collection' name is not specified, by default, faces are added to 'global' collection.
+			Use meaningful collection name that is easy to remember, 
+			e.g. "bollywood-actors", "indian-cricketers", "american-pop-singers", "ikea-employees" etc.
+
+			If the collection doesn't exist already, a new collection is created.
+
+	[2] detect_faces:
+
+			Detects faces in the given image by matching against previously indexed collection of faces.
+	
+		The API takes following parameters:
+
+			image: passed as base64 bytes format.
+
+			collection: name of the collection containing previously indexed faces.
+			If the collection name is not specified, by default, faces are matched against 'global' collection.
+
+	[3] detect_celebrities:
+
+			Detects celebrities and public figures in the given image. Image is passed in base-64 bytes format.
+
+	[4] list_collections:
+
+			Returns a list of available collections containing previously indexed faces.
+
+	[5] delete_collection:
+
+			Deletes a specific collection from the backend.
+
+		Required Parameter: 
+
+			'collection': name of the collection to be deleted.
