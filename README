@@ -1,0 +1,8 @@
+
+				==========   README   ==========
+
+REST APIs in this directory:
+	[1] face-recognition: contains REST API for face-recognition
+	[2] OCR: contains REST API for running optical character recognition
+
+More APIs will be added soon..
