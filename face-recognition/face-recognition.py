@@ -147,4 +147,9 @@ def list_collections():
 	return output
 
 # run the python flask app
-app.run(debug=True)
+import sys
+if len(sys.argv) > 1:
+	port_no = sys.argv[1]
+else:
+	port_no = 5000
+app.run(host='127.0.0.1', port=port_no, debug=True)
