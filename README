@@ -2,7 +2,7 @@
 				==========   README   ==========
 
 REST APIs in this directory:
-	[1] face-recognition: contains REST API for face-recognition
-	[2] OCR: contains REST API for running optical character recognition
+	[1] face-recognition: REST API for face-recognition
+	[2] text-extraction: REST API for extracting text from images
 
 More APIs will be added soon..
