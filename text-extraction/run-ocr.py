@@ -107,14 +107,15 @@ def ocr():
 	from datetime import datetime
         file_name = "image-" + datetime.now().strftime("%d%m%Y-%H%M%S") + "." + extn
 
-        # save file in input directory for further processing
+        # save file locally for further processing
         file_path = "input/" + file_name
         file.save(file_path)
 
+	# call OCR function
 	ocr_result = run_ocr(choice, file_path)
 	return ocr_result
 
-# running the app on specified port number
+# running the flask app on specified port number
 import sys
 if len(sys.argv) > 1:
 	port_no = sys.argv[1]
